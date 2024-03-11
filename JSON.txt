@@ -1,0 +1,82 @@
+[
+    {
+        "id": 1,
+        "type": "Perfume",
+        "name": "Ekos Frescor de Maracuja",
+        "description": "Camino olfativo: Frutal. Ingredientes principales: Maracuyá, cedro, musk. Intensidad: Leve.",
+        "precio": 59.9,
+        "enStock": false
+    },
+    {
+        "id": 2,
+        "type": "Perfume",
+        "name": "Ekos Frescor de Ishpink",
+        "description": "Camino olfativo: Frutal. Ingredientes principales: Ishpink, cedro, musk. Intensidad: Leve.",
+        "precio": 59.9,
+        "enStock": true
+    },
+    {
+        "id": 3,
+        "type": "Perfume",
+        "name": "Ekos Frescor de Pitanga",
+        "description": "Camino olfativo: Floral. Ingredientes principales: Pitanga, limon, pataqueira. Intensidad: Leve.",
+        "precio": 59.9,
+        "enStock": true
+    },
+    {
+        "id": 4,
+        "type": "Perfume",
+        "name": "Ekos Frescor de Castaña",
+        "description": "Camino olfativo: Frutal. Ingredientes principales: Castaña, cupuacu, pataqueira. Intensidad: Leve.",
+        "precio": 59.9,
+        "enStock": false
+    },
+    {
+        "id": 5,
+        "type": "Body Splash",
+        "name": "Tododia Body Splash Acerola E Hibisco",
+        "description": "Camino olfativo: Frutal. Ingredientes principales: Bergamota, Hibisco, Maderas. Intensidad: Leve.",
+        "precio": 31.5,
+        "enStock": false
+    },
+    {
+        "id": 6,
+        "type": "Body Splash",
+        "name": "Tododia Body Splash Hojas de Limón y Guanábana",
+        "description": "Camino olfativo: Floral. Ingredientes principales: Cítricos, Guanábana, Haba tonka. Intensidad: Leve.",
+        "precio": 31.5,
+        "enStock": true
+    },
+    {
+        "id": 7,
+        "type": "Body Splash",
+        "name": "Tododia Body Splash Flor de Lis",
+        "description": "Camino olfativo: Floral. Ingredientes principales: Hojas de bambú, Flores suaves, Sándalo, Cedro . Intensidad: Leve.",
+        "precio": 31.5,
+        "enStock": true
+    },
+    {
+        "id": 8,
+        "type": "Eau de Toilette",
+        "name": "Humor Meu Primeiro",
+        "description": "Camino olfativo: Frutsl. Ingredientes principales: Frutas, Pera, Priprioca . Intensidad: Moderado.",
+        "precio": 73.2,
+        "enStock": true
+    },
+    {
+        "id": 9,
+        "type": "Eau de Toilette",
+        "name": "Humor Liberta",
+        "description": "Camino olfativo: Frutal. Ingredientes principales: Pimenta rosa, Copaíba, Manzana y Bergamota. Intensidad: Moderado.",
+        "precio": 73.2,
+        "enStock": true
+    },
+    {
+        "id": 10,
+        "type": "Eau de Toilette",
+        "name": "Humor Transforma",
+        "description": "Camino olfativo: Amaderado. Ingredientes principales: Anana, Cardamomo, Lavanda, Cumaru. Intensidad: Moderado.",
+        "precio": 73.2,
+        "enStock": true
+    }
+]
