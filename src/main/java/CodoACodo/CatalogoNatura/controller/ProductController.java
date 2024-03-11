@@ -1,9 +1,12 @@
 package CodoACodo.CatalogoNatura.controller;
 
+import CodoACodo.CatalogoNatura.model.Product;
 import CodoACodo.CatalogoNatura.service.ProductServices;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
+
 
 @RestController
 public class ProductController {
@@ -11,9 +14,44 @@ public class ProductController {
     @Autowired
     ProductServices productServices;
 
-    @GetMapping()
-    public String createProduct(){
-        //return "Producto creado desde el Controller";
-        return productServices.createProduct();
+    @PostMapping("/crearProducto")
+    public void createProduct(@RequestBody Product product) {
+        productServices.createProduct(product);
     }
+
+    @PostMapping("/agregarProductos")
+    public void addProducts(@RequestBody List<Product> products) {
+        productServices.addProducts(products);
+    }
+
+    @GetMapping("/{id}")
+    public Product searchProductById(@PathVariable Integer id){
+        return productServices.searchProductById(id);
+    }
+    @GetMapping("/productos")
+    public List<Product> getAllProducts(){
+        return productServices.searchAllProducts();
+    }
+
+    @PutMapping("/actualizarProducto/{id}")
+    public Product updateProduct(@RequestBody Product product){
+        return productServices.updateProduct(product);
+    }
+
+    @DeleteMapping("/eliminarProducto/{id}")
+    public void deleteProduct(@PathVariable Integer id){
+        productServices.deleteProductById(id);
+    }
+
+    @DeleteMapping("/borrarProductos")
+    public void deleteProducts(){
+        productServices.deleteAllProduct();
+    }
+
+
+//    @GetMapping()
+//    public String createProduct(){
+//        //return "Producto creado desde el Controller";
+//        return productServices.createProduct();
+//    }
 }
