@@ -34,4 +34,9 @@ public class Product {
     public Integer getId() {
         return id;
     }
+
+    public double getPrecio() {
+        return precio;
+    }
 }
+

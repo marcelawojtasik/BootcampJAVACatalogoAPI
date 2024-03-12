@@ -33,6 +33,21 @@ public class ProductController {
         return productServices.searchAllProducts();
     }
 
+    @GetMapping("/buscarPorTipo")
+    public List<Product> searchProductByType(String type){
+        return productServices.findByType(type);
+    }
+
+    @GetMapping("/buscarPorNombre")
+    public List<Product> searchProductByName(String name){
+        return productServices.findByName(name);
+    }
+
+    @GetMapping("/Ofertas")
+    public List<Product> getOffers(double offerPrice){
+        return productServices.findByPrice(offerPrice);
+    }
+
     @PutMapping("/actualizarProducto/{id}")
     public Product updateProduct(@RequestBody Product product){
         return productServices.updateProduct(product);

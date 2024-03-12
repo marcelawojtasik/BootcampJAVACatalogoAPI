@@ -6,6 +6,7 @@ import jakarta.persistence.Id;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.List;
 
 
@@ -43,9 +44,30 @@ public class ProductServices {
         productRepository.deleteAll();
     }
 
+    public List<Product> findByType(String type) {
+        return productRepository.findByType(type);
+    }
+
+    public List<Product> findByName(String name) {
+        return productRepository.findByName(name);
+    }
+
+    public List<Product> findByPrice(double offerPrice) {
+        List<Product> products = productRepository.findAll(); //traigo todos los prod
+        List<Product> offerProducts = new ArrayList<>(); //instancio nuevo array para guardar lo q obtenga
+        //Lógica para hallar los prod cuyo precio sea menor al ingresado x parámetro
+        for (Product product : products) {
+            if (product.getPrecio() < offerPrice) {
+                offerProducts.add(product);
+            }
+        }
+            return offerProducts;
+        }
+}
+
 
 //    public String createProduct(){
 //        String serv = "Producto creado desde el Service";
 //        return serv;
 //    }
-}
+
