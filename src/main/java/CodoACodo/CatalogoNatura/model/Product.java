@@ -48,6 +48,10 @@ public class Product {
         return type;
     }
 
+    public String getName() {
+        return name;
+    }
+
     public void setType(String type) {
         this.type = type;
     }
