@@ -9,11 +9,12 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 @AllArgsConstructor
-@NoArgsConstructor
+//@NoArgsConstructor
 @Data
 
 @Entity
 public class Product {
+
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     int id;
@@ -31,6 +32,10 @@ public class Product {
         this.enStock = enStock;
     }
 
+    public Product() {
+
+    }
+
     public Integer getId() {
         return id;
     }
@@ -38,5 +43,14 @@ public class Product {
     public double getPrecio() {
         return precio;
     }
+
+    public String getType() {
+        return type;
+    }
+
+    public void setType(String type) {
+        this.type = type;
+    }
+
 }
 

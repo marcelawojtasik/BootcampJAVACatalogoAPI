@@ -43,9 +43,19 @@ public class ProductController {
         return productServices.findByName(name);
     }
 
-    @GetMapping("/Ofertas")
+    @GetMapping("/ofertas")
     public List<Product> getOffers(double offerPrice){
         return productServices.findByPrice(offerPrice);
+    }
+
+    @GetMapping("/buscarPorTipoYPrecio")
+    public List<Product> typeAndPriceProducts(String type, double offerPrice){
+        return productServices.findByTypeAndPrecio(type, offerPrice);
+    }
+
+    @GetMapping("/buscarPorTipoYNombre")
+    public List<Product> typeAndNameProducts(String type, String name){
+        return productServices.findByTypeAndName(type, name);
     }
 
     @PutMapping("/actualizarProducto/{id}")
@@ -62,6 +72,8 @@ public class ProductController {
     public void deleteProducts(){
         productServices.deleteAllProduct();
     }
+
+
 
 
 //    @GetMapping()
