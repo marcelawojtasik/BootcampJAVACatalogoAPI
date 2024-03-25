@@ -6,7 +6,6 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import lombok.AllArgsConstructor;
 import lombok.Data;
-import lombok.NoArgsConstructor;
 
 @AllArgsConstructor
 //@NoArgsConstructor
@@ -21,15 +20,15 @@ public class Product {
     String type;
     String name;
     String description;
-    double precio;
-    boolean enStock;
+    double price;
+    boolean inStock;
 
-    public Product(String type, String name, String description, double precio, boolean enStock) {
+    public Product(String type, String name, String description, double precio, boolean inStock) {
         this.type = type;
         this.name = name;
         this.description = description;
-        this.precio = precio;
-        this.enStock = enStock;
+        this.price = price;
+        this.inStock = inStock;
     }
 
     public Product() {
@@ -40,8 +39,8 @@ public class Product {
         return id;
     }
 
-    public double getPrecio() {
-        return precio;
+    public double getPrice() {
+        return price;
     }
 
     public String getType() {

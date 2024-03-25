@@ -1,5 +1,6 @@
 package CodoACodo.CatalogoNatura.service;
 
+import CodoACodo.CatalogoNatura.configuration.ProductConfiguration;
 import CodoACodo.CatalogoNatura.model.Product;
 import CodoACodo.CatalogoNatura.repository.ProductRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,6 +15,8 @@ public class ProductServices {
 
     @Autowired
     ProductRepository productRepository;
+    @Autowired
+    ProductConfiguration productConfiguration;
 
     public void createProduct(Product product) {
         productRepository.save(product);
@@ -57,7 +60,7 @@ public class ProductServices {
         List<Product> offerProducts = new ArrayList<>(); //instancio nuevo array para guardar lo q obtenga
         //Lógica para hallar los prod cuyo precio sea menor al ingresado x parámetro
         for (Product product : products) {
-            if (product.getPrecio() < offerPrice) {
+            if (product.getPrice() < offerPrice) {
                 offerProducts.add(product);
             }
         }
@@ -67,7 +70,7 @@ public class ProductServices {
     // FIND BY PRICE PROG FUNCIONAL
 //    public List<Product>detectOffers(List<Product> products, double offerPrice){
 //        return products.stream()
-//            .filter(product -> product.getPrecio() < offerPrice)
+//            .filter(product -> product.getPrice() < offerPrice)
 //            .collect(Collectors.toList());
 //    }
 //    public List<Product> getOffers(double offerPrice){
@@ -76,11 +79,11 @@ public class ProductServices {
 //    }
 
 
-    public List<Product> findByTypeAndPrecio(String type, double offerPrice) {
+    public List<Product> findByTypeAndPrice(String type, double offerPrice) {
         List<Product> products = productRepository.findAll();
         List<Product> typeAndPriceProducts = new ArrayList<>();
         for (Product product : products) {
-            if ((product.getPrecio() < offerPrice) & (product.getType().equals(type))) {
+            if ((product.getPrice() < offerPrice) & (product.getType().equals(type))) {
                 typeAndPriceProducts.add(product);
             }
 //            else{
@@ -92,6 +95,10 @@ public class ProductServices {
 
     public List<Product> findByTypeAndName(String type, String name) {
         return productRepository.findByTypeAndName(type, name);
+    }
+
+    public double getDolar(){
+        return productConfiguration.fetchDolar().getPromedio();
     }
 }
 

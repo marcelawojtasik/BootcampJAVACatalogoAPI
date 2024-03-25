@@ -50,12 +50,17 @@ public class ProductController {
 
     @GetMapping("/buscarPorTipoYPrecio")
     public List<Product> typeAndPriceProducts(String type, double offerPrice){
-        return productServices.findByTypeAndPrecio(type, offerPrice);
+        return productServices.findByTypeAndPrice(type, offerPrice);
     }
 
     @GetMapping("/buscarPorTipoYNombre")
     public List<Product> typeAndNameProducts(String type, String name){
         return productServices.findByTypeAndName(type, name);
+    }
+
+    @GetMapping("/dolar-promedio")
+    public double getDolar (){
+        return productServices.getDolar();
     }
 
     @PutMapping("/actualizarProducto/{id}")
